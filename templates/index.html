@@ -1,0 +1,65 @@
+{% extends 'res.html'%}
+{% block title%}
+<title>AV7BANK</title>
+<link rel="stylesheet" href="{{url_for('static', filename='home.css')}}">
+{%endblock title%}
+{% block body%}
+<div class="container">
+{% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+        <ul class=flashes>
+            {% for category, message in messages %}
+                <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+                    <strong>Message:</strong> {{message}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endwith %}
+<br><br>
+<img src="{{url_for('static', filename='favicon.jpg')}}" alt="A Image">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="{{url_for('static', filename='favicon2.jpg')}}" alt="A Image">
+{% if current_user.is_authenticated %}
+        <style>
+            .msg a {
+                color: lime;
+                }
+            a:hover {
+                color: aqua;
+            }
+            a {
+                color: antiquewhite;
+            }
+            h2 {
+                color: green;
+            }
+            h1 {
+                color: yellow;
+            }
+            h3 {
+                color: rgb(96, 218, 96);
+            }
+
+        </style>
+        <h1 class='text-center'>AV7BANK</h1>
+        <h2 class="text-center">Home</h2>
+        <h1>Hey! Nice to see you again!</h1>
+        <br>
+    {%else%}
+        <div class="msg">
+            <h1 class="text-center">AV7BANK = PROFIT FOR YA!</h1>
+            <h3 class="text-center">
+                <a href="/login">Login to your account </a>or <a href="/register">Make a new one</a></h3>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+        </div>
+    {%endif%}
+{%endblock body%}

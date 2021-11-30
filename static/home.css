@@ -1,0 +1,28 @@
+.msg a {
+    color: lime;
+}
+
+a:hover {
+    color: aqua;
+}
+
+a {
+    color: antiquewhite;
+}
+
+h2 {
+    color: green;
+}
+
+h1 {
+    color: yellow;
+}
+
+h3 {
+    color: rgb(0, 0, 0);
+}
+
+img {
+    width: 300px;
+    padding: 40px;
+}

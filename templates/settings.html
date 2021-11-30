@@ -1,0 +1,17 @@
+{%extends 'res.html'%}
+{%block title%}
+<title>AV7BANK Account Settings</title>
+<link rel="stylesheet" href="{{url_for('static',filename='Acsettings.css')}}">
+{%endblock title%}
+{%block body%}
+<h1 class='text-center'>AV7BANK</h1>
+<h2 class='text-center'>Settings Page</h2>
+<div class="container">
+    <div class="p-3 mb-2 bg-success text-black"><a href="/moneyLeft"><h3>Money</h3></a></div>
+    <div class="p-3 mb-2 bg-danger text-black">
+        <a href="/delete"><h3>Delete Your Account</h3></a>
+        
+    </div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+{%endblock body%}

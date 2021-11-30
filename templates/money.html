@@ -1,0 +1,35 @@
+{%extends 'res.html'%} {%block title%}
+<title>MoneyLeft</title>
+<link rel="stylesheet" href="{{url_for('static', filename='money.css')}}"> {%endblock title%} {%block body%}
+<h1 class="text-center">AV7coder</h1>
+{% with messages = get_flashed_messages(with_categories=true) %} {% if messages %}
+<ul class=flashes>
+    {% for category, message in messages %}
+    <div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+        <strong>Message:</strong> {{message}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+</ul>
+{% endif %} {% endwith %}
+<div class="container">
+    <form action="/moneyLeft" method="POST">
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" id="inputEmail4" name="email">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" name="password">
+            </div>
+        </div>
+        <button class="btn btn-dark">Search Database</button>
+    </form>
+</div>
+{% if request.method == 'POST'%}
+<h2 class="text-center">MoneyLeft = {{variable}}</h2>
+{% endif %}
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>{%endblock body%}
